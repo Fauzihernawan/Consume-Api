@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('/siswa', [StudentController::class, 'index']); 
 Route::get('/siswa/create', [StudentController::class, 'create']);
 Route::post('/siswa/store', [StudentController::class, 'store']);
+Route::get('/siswa/{id}', [StudentController::class, 'show']);
+Route::get('/siswa/edit/{id}', [StudentController::class, 'edit']);
+Route::patch('/siswa/update/{id}', [StudentController::class, 'update']);
+Route::delete('/siswa/delete/{id}', [StudentController::class, 'destroy']);

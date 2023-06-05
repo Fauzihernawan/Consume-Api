@@ -33,4 +33,40 @@ class StudentController extends Controller
         $response = $baseApi->create('api/students/store', $upload);
         return redirect('/siswa');
     }
+
+    public function show ($id)
+    {
+        $data = (new BaseApi)->detail('/api/students', $id);
+        $students = $data->json();
+        return view('students.show')->with('students', $students['data']);
+    
+    }
+
+    public function edit ($id) 
+    {
+        $data = (new BaseApi)->detail('/api/students', $id);
+        $students = $data->json();
+        return view('students.update')->with('students', $students['data']);
+    }
+    public function update (Request $request, $id)
+    { 
+        $payload = [
+            'nis' => $request->nis,
+            'nama' =>$request->nama,
+            'rombel'=>$request->rombel,
+            'rayon' =>$request->rayon,
+        ];
+
+        $baseApi = new BaseApi;
+        $response = $baseApi->update('api/students/update', $id, $payload);
+        return redirect('/siswa');
+    }
+
+
+    public function destroy (Request $request, $id)
+    {
+        $baseApi = new BaseApi;
+        $response = $baseApi->delete('/api/students/delete', $id);
+        return redirect('/siswa');
+    }
 }
