@@ -10,7 +10,7 @@
       <div class="d-flex justify-content-center align-items-center container my-5">
           <div class="card my-4">
             <div class="container">
-            <form action="/siswa/store" method="post" style="width:450px;">
+            <form action="/siswa/store" method="post" style="width:450px;" enctype="multipart/form-data">
             @csrf
             <legend class="text-center mb-4 mt-2">TAMBAH DATA SISWA</legend>
           <div class="mb-3">
@@ -28,6 +28,10 @@
           <div class="mb-3">
             <label for="" class="form-label">Rayon</label>
             <input type="text" id="" name="rayon" class="form-control" placeholder="Masukan Rayon">
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label">Image</label>
+            <input type="file" id="" name="file" class="form-control" placeholder="Masukan Image">
           </div>
           <button type="submit" class="btn btn-primary mb-3">Submit</button>
           <a href="/siswa" class="btn btn-primary mb-3">Back</a>

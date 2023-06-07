@@ -32,13 +32,20 @@ class StudentController extends Controller
 
     public function store(Request $request)
     {
+        if($request->file('file')){
+            $extension = $request->file('file')->getClientOriginalExtension();
+            $newName = $request->nis.'-'.now()->timestamp.'.'.$extension;
+            $request->file('file')->move(public_path('/storage/'), $newName);
+         }
+
         $upload = [
             'nis' => $request->nis,
             'nama' =>$request->nama,
             'rombel'=>$request->rombel,
             'rayon' =>$request->rayon,
+            'image' => $newName,
         ];
-
+        
         $baseApi = new BaseApi;
         $response = $baseApi->create('api/students/store', $upload);
         return redirect('/siswa');
