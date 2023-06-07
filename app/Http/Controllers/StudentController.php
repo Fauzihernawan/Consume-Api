@@ -9,10 +9,20 @@ class StudentController extends Controller
 {
     public function index()
     {
-        $data = (new BaseApi)->index('/api/students');
-        $students = $data->json();
+        // $data = (new BaseApi)->index('/api/students');
+        // $students = $data->json();
+    
 
-        return view('students.index')->with('students', $students['data']);
+        // return view('students.index')->with('students', $students['data']);
+
+        $data = (new BaseApi)->index('/api/students');
+        $students = $data->json('data');
+
+        for ($i=0; $i < count($students); $i++) {
+            $students[$i]['image_path'] = env('API_HOST') . 'storage/' . $students[$i]['image'];
+        }
+
+        return view('students.index')->with('students' , $students);
     }
 
     public function create()

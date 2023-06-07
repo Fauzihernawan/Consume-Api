@@ -14,21 +14,22 @@
             @csrf
             <legend class="text-center mb-4 mt-2">TAMBAH DATA SISWA</legend>
           <div class="mb-3">
-            <label for="disabledTextInput" class="form-label">Nomor induk sekolah</label>
-            <input type="number" id="disabledTextInput" class="form-control" placeholder="Masukan NIS">
+            <label class="form-label">Nomor induk sekolah</label>
+            <input type="number" id=""  name="nis" class="form-control" placeholder="Masukan NIS">
           </div>
           <div class="mb-3">
-            <label for="disabledTextInput" class="form-label">Nama</label>
-            <input type="text" id="disabledTextInput" class="form-control" placeholder="Masukan Nama">
+            <label class="form-label">Nama</label>
+            <input type="text" id="" name="nama" class="form-control" placeholder="Masukan Nama">
           </div>
           <div class="mb-3">
-            <label for="disabledTextInput" class="form-label">Rombel</label>
-            <input type="text" id="disabledTextInput" class="form-control" placeholder="Masukan Rombel">
+            <label for="" class="form-label">Rombel</label>
+            <input type="text" id="" name="rombel" class="form-control" placeholder="Masukan Rombel">
           </div>
           <div class="mb-3">
-            <label for="disabledTextInput" class="form-label">Rayon</label>
-            <input type="text" id="disabledTextInput" class="form-control" placeholder="Masukan Rayon">
+            <label for="" class="form-label">Rayon</label>
+            <input type="text" id="" name="rayon" class="form-control" placeholder="Masukan Rayon">
           </div>
+          <button type="submit" class="btn btn-primary mb-3">Submit</button>
           <a href="/siswa" class="btn btn-primary mb-3">Back</a>
       </form>
            </div>

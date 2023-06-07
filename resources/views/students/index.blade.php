@@ -20,6 +20,7 @@
                     <th>Nama</th> 
                     <th>Rombel</th>
                     <th>Rayon</th>
+                    <td>Image</td>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -31,6 +32,7 @@
                     <td>{{$item['nama']}}</td>
                     <td>{{$item['rombel']}}</td>
                     <td>{{$item['rayon']}}</td>
+                    <td><img src="{{ asset($item['image_path'])}}" alt="" width="100"></td>
                     <td>
                         <form action="/siswa/delete/{{$item ['id']}}" method="post">
                             <a href="/siswa/{{$item['id']}}" class="btn btn-primary bi bi-eye-slash"></a> |
